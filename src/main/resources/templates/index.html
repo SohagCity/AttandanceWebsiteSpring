@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+    <title>Attendance Register</title>
+</head>
+<body>
+
+<main>
+    <header>
+        <img src="../static/images/whiteGirls.jpg" th:src="@{/images/whiteGirls.jpg}" alt="teacher"/>
+        <h2>Attendance Register</h2>
+        <h3>Easy and simple to use.</h3>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" th:href="@{/}">Home</a></li>
+            <div class="dropdown">
+                <li>
+                    <a onclick="show_menu('menu1')" class="dropdownlink">Create</a>
+                </li>
+                <div id="menu1" class="menuitems">
+                    <li><a href="scheduleRegister.html" th:href="@{/scheduleRegister}">Add Schedule</a></li>
+                    <li><a href="studentRegister.html" th:href="@{/studentRegister}">Register a new Student</a></li>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <li>
+                    <a onclick="show_menu('menu2')" class="dropdownlink">Students</a>
+                </li>
+                <div id="menu2" class="menuitems">
+                    <li><a href="studentsList.html" th:href="@{/studentsList}">List of Students</a></li>
+                    <li><a href="studentProfile.html" th:href="@{/studentProfile}">Students Profile</a></li>
+                </div>
+            </div>
+
+            <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
+            <li><a href="register.html" th:href="@{/register}">Register</a></li>
+        </ul>
+
+    </nav>
+    <article>
+        <!--Content on this site is sourced from ENO and The Royal Opera House -->
+        <p>We can help you achieve your goals. Leverage our experience and avoid common pitfalls.
+            Your dedicated implementation specialist will walk you through the 3Cs of Successful Implementation.</p>
+
+        <p>Together, we will define what success means to you at the start of our partnership.
+            With this, we will outline a detailed timeline of deliverable for both parties to assure accountability.</p>
+
+        <p>Timely and transparent communication will ensure mutual accountability
+            when it comes to meeting key milestones on your road to success</p>
+
+        <p>From our team to yours, we will work diligently towards a common goal.
+            Your success means everything to us; we will always be here to help you.</p>
+
+        <img src="../static/images/teacher.jpg" th:src="@{/images/teacher.jpg}" alt="teacher"/>
+
+
+        <p>Some features are:</p>
+
+        <ul>
+            <li>Faster and easier to use than any other solution, especially pen and paper or spreadsheets.</li>
+            <li>Integrated reporting to get all of the information back from your tracking easily.</li>
+            <li> Track as many classes and students as you want all in the same place.</li>
+            <li> Get your student and class data into and out of the system anytime you want.</li>
+
+        </ul>
+        <section class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hEDQWgvJwHU"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+    </article>
+    <footer>
+        <p>Contact us: sohag@gmail.com</p>
+        <p>&copy; S. Miah 2019</p>
+    </footer>
+</main>
+</body>
+</html>

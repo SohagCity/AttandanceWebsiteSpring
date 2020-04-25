@@ -1,0 +1,43 @@
+Register with teacherID: 4 to have a better experience as data already exists with this ID.
+3 exising users with ID: 1 to 3
+Passwords: Qwertyu1
+
+
+HTML: resources/templates
+
+CSS: resources/static/css
+Responsive images.
+Table design.
+Colours.
+Seach Box and buttons design.
+Adaptation to mobile devices.
+
+Validation behaviour: register.html
+password uses regular expression
+dropdown menu
+teacherID field limited to number
+more fields limited to number in scheduleRegister, studentProfile, scheduleRegister and studentList
+scheduleRegister has field limited to date
+
+JS:
+In studentProfile.html used to calculate percentage.
+In studentsList.html used to sort table data.
+In nav used to show more options on click.
+
+
+Database writers:
+studentRegister.html writes into Student (StudentController)
+scheduleRegister.html writes into Schedule (ScheduleController)
+register.html writes into TeacherUser (RegostrationController)
+when logging in writes into Login History (TeacherUserDetails)
+studentProfile writes into Student
+
+Database reads:
+profile.html reads from TeacherUser and Login History
+studentProfile reads from Student (FindStudentController)
+studentsList reads from Student (ShowStudentController)
+
+security:
+tls-attendance.jks
+BCrypt to store password.
+Few pages require user to log in.

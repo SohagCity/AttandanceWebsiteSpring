@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+    <title>City Opera House</title>
+</head>
+<body onload="addition()">
+
+<main>
+    <header>
+        <img src="../static/images/whiteGuys.jpg" th:src="@{/images/whiteGuys.jpg}" alt="teacher"/>
+        <h2>Attendance Register</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" th:href="@{/}">Home</a></li>
+            <div class="dropdown">
+                <li>
+                    <a onclick="show_menu('menu1')" class="dropdownlink">Create</a>
+                </li>
+                <div id="menu1" class="menuitems">
+                    <li><a href="scheduleRegister.html" th:href="@{/scheduleRegister}">Add Schedule</a></li>
+                    <li><a href="studentRegister.html" th:href="@{/studentRegister}">Register a new Student</a></li>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <li>
+                    <a onclick="show_menu('menu2')" class="dropdownlink">Students</a>
+                </li>
+                <div id="menu2" class="menuitems">
+                    <li><a href="studentsList.html" th:href="@{/studentsList}">List of Students</a></li>
+                    <li><a href="studentProfile.html" th:href="@{/studentProfile}">Students Profile</a></li>
+                </div>
+            </div>
+
+            <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
+            <li><a href="register.html" th:href="@{/register}">Register</a></li>
+        </ul>
+
+    </nav>
+
+    <article>
+        <form>
+                <input type="number" name="classID" placeholder="Class ID" class="searchBox"/>
+                <input type="submit" value="Get students"/>
+        </form>
+        <br />
+        <table id="table">
+            <caption>Students: </caption>
+            <th onclick="sortTable()">First Name</th>
+            <th onclick="sortTable()">Last Name</th>
+            <th onclick="sortTable()">Student ID</th>
+            <th onclick="sortTable()">Number of Absences</th>
+            <th onclick="sortTable()">Number of Presences</th>
+            <tr th:each="student : ${students.students}">
+                <td th:text="${student.firstName}" >*</td>
+                <td th:text="${student.lastName}" >*</td>
+                <td th:text="${student.studentID}" >*</td>
+                <td th:text="${student.absentNo}" >*</td>
+                <td th:text="${student.presentNo}"  >*</td>
+            </tr>
+        </table>
+        <label>Average Class Attendance: </label>
+        <label id="total">0</label>
+    </article>
+    <footer>
+        <p>Contact us: sohag@gmail.com</p>
+        <p>&copy; S. Miah 2019</p>
+    </footer>
+</main>
+</body>
+</html>
